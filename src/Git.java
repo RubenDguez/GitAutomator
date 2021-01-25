@@ -17,8 +17,8 @@ abstract class Git {
             executeCommands = true;
     }
 
-    // Automatic git commit, will give current time in milliseconds as
-    // commit comment
+    // Automatic git commit, will give current time in milliseconds as commit
+    // comment
     void gitCommit() {
         if (executeCommands)
             Utils.execute("git commit -m \"" + System.currentTimeMillis() + "\"");
