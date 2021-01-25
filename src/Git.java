@@ -43,7 +43,6 @@ abstract class Git {
     void gitAdd(String fileName) {
         if (executeCommands)
             Utils.execute("git add " + fileName);
-
     }
 
     void gitAdd(String[] fileNames) {
