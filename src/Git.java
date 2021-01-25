@@ -46,6 +46,12 @@ abstract class Git {
 
     }
 
+    void gitAdd(String[] fileNames) {
+        for (String s : fileNames) {
+            Utils.execute("git add " + s);
+        }
+    }
+
     void gitAddAll() {
         if (executeCommands)
             Utils.execute("git add .");
