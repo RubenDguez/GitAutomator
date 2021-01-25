@@ -1,6 +1,13 @@
 public class RunGit extends Git {
 
-    // main secuence of command execution
+    /**
+     * Initiate git, switch to specified branch, ckeckout to specified branch Adds
+     * all tracked files to commit the changes using AutoCommit comment
+     * 
+     * @param remote
+     * @param branch
+     * @param gitRepo
+     */
     public void run(String remote, String branch, String gitRepo) {
         gitInit();
         gitBranch(branch);
@@ -13,6 +20,15 @@ public class RunGit extends Git {
         gitStatus();
     }
 
+    /**
+     * Initiate git, switch to specified branch, ckeckout to specified branch Adds
+     * specified file to commits the changes using AutoCommit comment
+     * 
+     * @param fileName
+     * @param remote
+     * @param branch
+     * @param gitRepo
+     */
     public void run(String fileName, String remote, String branch, String gitRepo) {
         gitInit();
         gitBranch(branch);
@@ -26,6 +42,16 @@ public class RunGit extends Git {
 
     }
 
+    /**
+     * Initiate git, switch to specified branch, ckeckout to specified branch Adds
+     * an array of specified files commits the changes using AutoCommit comment
+     * 
+     * 
+     * @param fileNames
+     * @param remote
+     * @param branch
+     * @param gitRepo
+     */
     public void run(String[] fileNames, String remote, String branch, String gitRepo) {
         gitInit();
         gitBranch(branch);

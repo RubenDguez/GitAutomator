@@ -54,6 +54,8 @@ public class Utils {
     public static boolean compareStrings(String command, String expectation) {
         try {
 
+            System.out.println("compare strings: " + command + " " + expectation);
+
             System.out.println(command);
 
             Process process = Runtime.getRuntime().exec(command);
@@ -81,4 +83,5 @@ public class Utils {
         return false;
 
     }
+
 }
