@@ -6,6 +6,7 @@ public class Utils {
 
     private static OS os;
 
+    // Determines OS System
     private static void getOs() {
         String OSName = System.getProperty("os.name").toLowerCase();
         if (OSName.contains("windows"))
@@ -14,6 +15,7 @@ public class Utils {
             os = OS.MAC;
     }
 
+    // Executes commands specific to the OS System
     public static void clearScreen() {
         getOs();
         switch (os) {
@@ -26,6 +28,7 @@ public class Utils {
         }
     }
 
+    // Main command executor
     public static void execute(String command) {
         try {
 
@@ -47,6 +50,7 @@ public class Utils {
         }
     }
 
+    // Compares the output of a command to an expected output
     public static boolean compareStrings(String command, String expectation) {
         try {
 

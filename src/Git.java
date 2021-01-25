@@ -10,15 +10,21 @@ abstract class Git {
     public Git() {
         path = System.getProperty("user.dir");
         Utils.clearScreen();
+
+        // Determines if Git is installed in system
+        // Determines if Java is installed in system
         if (Utils.compareStrings("git --version", "git version") && Utils.compareStrings("java --version", "java"))
             executeCommands = true;
     }
 
+    // Automatic git commit, will give current time in milliseconds as
+    // commit comment
     void gitCommit() {
         if (executeCommands)
             Utils.execute("git commit -m \"" + System.currentTimeMillis() + "\"");
     }
 
+    // Git commit with a pre-defined commit comment
     void gitCommit(String commitComment) {
         if (executeCommands)
             Utils.execute("git commit -m \'" + commitComment + "\'");
@@ -54,6 +60,9 @@ abstract class Git {
             Utils.execute("git branch -M " + branchName);
     }
 
+    // determines if folder .git exists,
+    // if does not exists, execute git init
+    // otherwise will skip this command
     void gitInit() {
         if (executeCommands) {
             Path path = Paths.get(this.path + "/.git");
