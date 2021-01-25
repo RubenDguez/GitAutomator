@@ -82,5 +82,4 @@ abstract class Git {
             }
         }
     }
-
 }
