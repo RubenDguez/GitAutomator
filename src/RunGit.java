@@ -9,7 +9,7 @@ public class RunGit extends Git {
         gitCommit();
         gitAddRemote(remote, repository);
         gitPush(remote, branch);
-        Utils.clearScreen();
+        // Utils.clearScreen();
         gitStatus();
     }
 
