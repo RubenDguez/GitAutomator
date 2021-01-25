@@ -7,8 +7,8 @@ abstract class Git {
     private final String path;
 
     public Git() {
-        Utils.clearScreen();
         path = System.getProperty("user.dir");
+        Utils.clearScreen();
     }
 
     void gitCommit() {
