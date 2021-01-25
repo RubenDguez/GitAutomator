@@ -1,7 +1,6 @@
 public class RunGit extends Git {
 
     public void run(String remote, String branch, String repository) {
-        // Utils.clearScreen();
         gitInit();
         gitBranch(branch);
         gitCheckout(branch);

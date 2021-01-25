@@ -10,10 +10,15 @@ abstract class Git {
         path = System.getProperty("user.dir");
         Utils.clearScreen();
         gitVersion();
+        javaVersion();
     }
 
     void gitVersion() {
         Utils.execute("git --version");
+    }
+
+    void javaVersion() {
+        Utils.execute("java --version");
     }
 
     void gitCommit() {
