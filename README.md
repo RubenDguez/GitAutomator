@@ -1,6 +1,11 @@
-## Getting Started
+# GitAutomator
+> Git automator helps run Git commands automatically. You can run GitAutomator for your entire project or give it a single file or perhaps an array of files tha you need to keep track and execute git commands on them.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Pre-Requisites
+> GitAutomator needs Git instaled in your system, and also needs at least Java JDK running in your system.
+
+## Getting Started
+> Clone the repository you can find it [here](https://github.com/RubenDguez/GitAutomator.git).
 
 ## Folder Structure
 
@@ -8,7 +13,3 @@ The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
-
-## Dependency Management
-
-The `JAVA DEPENDENCIES` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-pack/blob/master/release-notes/v0.9.0.md#work-with-jar-files-directly).
