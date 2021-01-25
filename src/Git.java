@@ -5,58 +5,61 @@ import java.nio.file.Files;
 abstract class Git {
 
     private final String path;
+    private boolean executeCommands = false;
 
     public Git() {
         path = System.getProperty("user.dir");
         Utils.clearScreen();
-        gitVersion();
-        javaVersion();
-    }
-
-    void gitVersion() {
-        Utils.execute("git --version");
-    }
-
-    void javaVersion() {
-        Utils.execute("java --version");
+        if (Utils.compareStrings("git --version", "git version") && Utils.compareStrings("java --version", "java"))
+            executeCommands = true;
     }
 
     void gitCommit() {
-        Utils.execute("git commit -m \"" + System.currentTimeMillis() + "\"");
+        if (executeCommands)
+            Utils.execute("git commit -m \"" + System.currentTimeMillis() + "\"");
     }
 
     void gitCommit(String commitComment) {
-        Utils.execute("git commit -m \'" + commitComment + "\'");
+        if (executeCommands)
+            Utils.execute("git commit -m \'" + commitComment + "\'");
     }
 
     void gitAddRemote(String remote, String gitRepo) {
-        Utils.execute("git remote add " + remote + " " + gitRepo);
+        if (executeCommands)
+            Utils.execute("git remote add " + remote + " " + gitRepo);
     }
 
     void gitPush(String remote, String branch) {
-        Utils.execute("git push -u " + remote + " " + branch);
+        if (executeCommands)
+            Utils.execute("git push -u " + remote + " " + branch);
     }
 
     void gitAddAll() {
-        Utils.execute("git add .");
+        if (executeCommands)
+            Utils.execute("git add .");
     }
 
     void gitStatus() {
-        Utils.execute("git status");
+        if (executeCommands)
+            Utils.execute("git status");
     }
 
     void gitCheckout(String branchName) {
-        Utils.execute("git checkout -b " + branchName);
+        if (executeCommands)
+            Utils.execute("git checkout -b " + branchName);
     }
 
     void gitBranch(String branchName) {
-        Utils.execute("git branch -M " + branchName);
+        if (executeCommands)
+            Utils.execute("git branch -M " + branchName);
     }
 
     void gitInit() {
-        Path path = Paths.get(this.path + "/.git");
-        if (!Files.exists(path)) {
-            Utils.execute("git init");
+        if (executeCommands) {
+            Path path = Paths.get(this.path + "/.git");
+            if (!Files.exists(path)) {
+                Utils.execute("git init");
+            }
         }
     }
 

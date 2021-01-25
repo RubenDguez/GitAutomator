@@ -46,4 +46,35 @@ public class Utils {
             e.printStackTrace();
         }
     }
+
+    public static boolean compareStrings(String command, String expectation) {
+        try {
+
+            System.out.println(command);
+
+            Process process = Runtime.getRuntime().exec(command);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+
+                System.out.println(line);
+
+                if (line.contains(expectation)) {
+                    reader.close();
+                    return true;
+                }
+            }
+
+            reader.close();
+            return false;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+
+    }
 }
