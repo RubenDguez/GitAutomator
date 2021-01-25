@@ -40,6 +40,12 @@ abstract class Git {
             Utils.execute("git push -u " + remote + " " + branch);
     }
 
+    void gitAdd(String fileName) {
+        if (executeCommands)
+            Utils.execute("git add " + fileName);
+
+    }
+
     void gitAddAll() {
         if (executeCommands)
             Utils.execute("git add .");
