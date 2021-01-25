@@ -1,10 +1,6 @@
 public class RunGit extends Git {
 
-    private final String remote = "origin";
-    private final String branch = "main";
-    private final String repository = "https://github.com/RubenDguez/GitAutomator.git";
-
-    public void run() {
+    public void run(String remote, String branch, String repository) {
         Utils.clearScreen();
         gitInit();
         gitBranch(branch);
