@@ -14,5 +14,4 @@ public class App {
         // rg.run(fileName, remote, branch, gitRepo);
         // rg.run(arrFileName, remote, branch, gitRepo);
     }
-
 }
